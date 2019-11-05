@@ -16,7 +16,7 @@ var resultat=[],lettre;
 for(let y =0;y<categorie.length;y++){
   for(let i=0;i<27;i++){
     //si i ==0 lettre var être égale à '%23' se qui correspond à '#' et après lettre va être égale à 'a' puis 'b' ...
-    (i==0)?(lettre = '%23'):lettre =String.fromCharCode(96+i);
+    lettre= i==0 ? '%23' : String.fromCharCode(96+i);
     //ajoute de '&indexField='+lettre qui nous permet de changer de page avec les différente lettres
     await page.goto(categorie[y]+'&indexField='+lettre,{waitUntil: 'networkidle0'});
     //$$eval nous permet de selectioner tout les items donc un item contient le nom de la marque et le nombre de produit
